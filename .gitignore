@@ -1,0 +1,42 @@
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Virtual environment
+venv/
+env/
+
+# SQLite & local instance data
+instance/
+*.sqlite3
+
+# Environment variables
+.env
+.env.*
+
+# Keras model files
+models/*.keras
+*.h5
+
+# Uploads (if any)
+uploads/
+
+# Flask migration files (if using Alembic)
+migrations/
+
+# OS / editor junk
+.DS_Store
+*.swp
+*.swo
+
+# Log files
+*.log
+
+# Ignore any backup archives
+*.zip
+*.tar
+*.gz
+*.rar
+*.7z
