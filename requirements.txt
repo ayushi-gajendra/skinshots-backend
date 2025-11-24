@@ -1,9 +1,8 @@
 Flask
 Flask-Cors
 Flask-SQLAlchemy
-python-dotenv
 gunicorn
 tensorflow
-numpy
-Pillow
+google-generativeai
+python-dotenv
 psycopg2-binary
