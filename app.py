@@ -16,19 +16,19 @@ def create_app():
     CORS(app, resources={
         r"/*": {
             "origins": [
-                "https://skinshots-frontend.vercel.app/",
+                "https://skinshots-frontend.vercel.app",
                 "http://localhost:3000"
             ]
         }
     })
 
     app.config["SQLALCHEMY_DATABASE_URI"] = os.getenv("DATABASE_URL")
+    app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
+    
     db.init_app(app)
 
     app.register_blueprint(products_bp)
-    
     app.register_blueprint(personalised_products_bp)
-
     app.register_blueprint(skin_analysis_bp)
 
     @app.route("/")
@@ -38,7 +38,7 @@ def create_app():
     @app.route("/test-db")
     def test_db():
         try:
-            db.session.execute("SELECT 1")
+            db.session.execute(text("SELECT 1"))
             return "DB connected!"
         except Exception as e:
             return str(e)
