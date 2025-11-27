@@ -45,11 +45,9 @@ def skin_analysis():
     # image_save_path = "temp_image.jpg"
     # image.save(image_save_path)                                 # save image temporarily
     # skin_concern = predict_skin_concern(image_save_path)
+    # os.remove(image_save_path)                                   # cleanup
 
     skin_concern = random.choice(SKIN_CLASSES)
-
-    os.remove(image_save_path)                                   # cleanup
-
     return jsonify(
         {"skin_concern": skin_concern}
     )
