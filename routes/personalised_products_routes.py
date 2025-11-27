@@ -7,7 +7,7 @@ import json
 
 personalised_products_bp = Blueprint("personalised_products", __name__, url_prefix="/api/personalised-products")
 
-genai.configure(api_key=os.getenv("GEMINI_API_KEY"))
+genai.configure(api_key=os.getenv("GOOGLE_API_KEY"))
 
 
 @personalised_products_bp.route("", methods=["POST"])
